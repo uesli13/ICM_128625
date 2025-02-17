@@ -69,11 +69,13 @@ fun aa(modifier: Modifier = Modifier){
         else -> R.string.start_again
     }
 
-    fun updateState(state: Int){
+    fun updateState(){
         when(state){
-            1 -> state++
+            1->state++
+            2->state++//will be changed
+            3->state++
+            else ->state=1
         }
-
     }
     Column(
         modifier = modifier,
@@ -84,7 +86,7 @@ fun aa(modifier: Modifier = Modifier){
             contentDescription = state.toString()
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { state++}) {
+        Button(onClick = { updateState()}) {
             Text(stringResource(stringResource))
         }
     }
